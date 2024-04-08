@@ -3,7 +3,6 @@ using TEG.Domain;
 
 namespace TEG.Service;
 
-// venueService 
 public class VenueService : IVenueService
 {
     private readonly IHttpClientFactory _httpClientFactory;
@@ -17,9 +16,8 @@ public class VenueService : IVenueService
     {
         var client = _httpClientFactory.CreateClient();
         client.BaseAddress = new Uri(apiBaseUrl);
-
-        // Construct the API endpoint with query parameters
-        var requestUri = $"raw/AC2PwZSt";
+        
+        var requestUri = $"events/event-data.json";
 
         var response = await client.GetAsync(requestUri);
 
